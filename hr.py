@@ -33,6 +33,14 @@ class hr_sanction(osv.osv):
         'sanction_date': fields.date('Sanction Date'),
         'comment': fields.text('Additional Information'),
         'signed': fields.boolean('Signed'),
+	'job_id': fields.related(
+		'employee_id',
+		'job_id',
+		type="many2one",
+		relation="hr.job",
+		string="Job",
+		store=False
+		)
     }
 
 hr_sanction()
